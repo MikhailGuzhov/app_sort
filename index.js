@@ -4,10 +4,10 @@ document.getElementById("sortButton").addEventListener("click", function () {
   resultContainer.innerHTML = ""; // Очистить предыдущий результат
 
   // Разделение строки по пробелам и запятым
-  const numbersArray = input
-    .split(/[\s,]+/)
-    .map((num) => num.trim())
-    .filter((num) => num !== "");
+const numbersArray = input
+  .split(/[\s,;:]+/)
+  .map((num) => num.trim())
+  .filter((num) => num !== "");
 
   // Удалить дубликаты и отсортировать
   const uniqueNumbers = [...new Set(numbersArray)];
