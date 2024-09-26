@@ -28,6 +28,10 @@ document.getElementById("sortButton").addEventListener("click", function () {
     // Проверка на дубликаты
     if (duplicates.includes(number.toString())) {
       numberElement.classList.add("red");
+            // добавляем рядом надпись что это дубликат
+      const duplicateLabel = document.createElement("span");
+      duplicateLabel.textContent = " (дубликат)";
+      numberElement.appendChild(duplicateLabel);
     } else {
       numberElement.classList.add(
         sortedNumbers.indexOf(number) % 2 === 0 ? "orange" : "green"
