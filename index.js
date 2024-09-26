@@ -28,23 +28,28 @@ document.getElementById("sortButton").addEventListener("click", function () {
     // Проверка на дубликаты
     if (duplicates.includes(number.toString())) {
       numberElement.classList.add("red");
-            // добавляем рядом надпись что это дубликат
+
+      // добавляем надпись что это дубликат
       const duplicateLabel = document.createElement("span");
-      duplicateLabel.textContent = " (дубликат)";
-      numberElement.appendChild(duplicateLabel);
+      duplicateLabel.textContent = "(дубликат)";
+
+      // Также добавляем текст с номером
+      numberElement.textContent = number; // Сначала добавляем номер
+      numberElement.appendChild(duplicateLabel); // Затем добавляем элемент с "(дубликат)"
     } else {
       numberElement.classList.add(
         sortedNumbers.indexOf(number) % 2 === 0 ? "orange" : "green"
       );
+      numberElement.textContent = number; // Добавляем текст с номером
     }
 
-    numberElement.textContent = number;
     resultContainer.appendChild(numberElement);
   });
 
   // Количество уникальных номеров
   const countContainer = document.getElementById("countContainer");
-  countContainer.textContent = `Общее количество уникальных номеров: ${sortedNumbers.length}`;
+  countContainer.textContent = `Общее количество уникальных номеров: ${sortedNumbers.length}`; // из них колличество дубликатов
+  countContainer.textContent += ` из них дубликатов: ${duplicates.length}`;
 });
 
 document.getElementById("resetButton").addEventListener("click", function () {
