@@ -2,7 +2,7 @@ body {
     display: flex;
     justify-content: center; /* Выровнять по центру по горизонтали */
     align-items: center; /* Выровнять по центру по вертикали */
-    height: 100vh; /* Задает высоту в 100% от высоты окна браузера */
+
     margin: 0; /* Убирает отступы по умолчанию */
     text-align: center; /* Выровнять текст по центру в блоках */
     font-family: Arial, sans-serif; /* Установить шрифт */
@@ -10,7 +10,7 @@ body {
 
 
 
-body__container {
+.body__container {
 
   display: flex;
   justify-content: center;
